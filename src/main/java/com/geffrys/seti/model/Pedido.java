@@ -1,15 +1,20 @@
 package com.geffrys.seti.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import tools.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
+import lombok.Data;
+import tools.jackson.dataformat.xml.annotation.JacksonXmlProperty;
+import tools.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+
+@Data
+@JacksonXmlRootElement(localName = "EnvioPedidoRequest")
 public class Pedido {
     @JacksonXmlProperty(localName = "Pedido")
     @JsonProperty("numPedido")
-    Long numPedido;
+    String numPedido;
     @JacksonXmlProperty(localName = "Cantidad")
     @JsonProperty("cantidadPedido")
-    int cantidadPedido;
+    String cantidadPedido;
     @JacksonXmlProperty(localName = "EAN")
     @JsonProperty("codigoEAN")
     String codigoEAN;
